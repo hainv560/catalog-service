@@ -1,0 +1,53 @@
+server:
+  port:
+  servlet:
+    context-path: /api/v1/
+
+spring:
+  profiles:
+    active: default
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: true
+  application:
+    name: catalog-service
+    version: v1
+  datasource:
+    password: 123456a@
+    username: postgres
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=catalog
+    hikari:
+      maximum-pool-size: 10
+      idle-timeout: 10
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database: postgresql
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+logging:
+  level:
+    root: info
+
+---
+spring:
+  profiles:
+    active: dev
+  jpa:
+    show-sql: true
+
+---
+spring:
+  profiles:
+    active: prod
+  jpa:
+    show-sql: true
+  main:
+    banner-mode: off
+
+logging:
+  level: error
+
