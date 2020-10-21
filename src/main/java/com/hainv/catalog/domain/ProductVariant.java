@@ -9,7 +9,11 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AttributeValue {
-    private Long id;
-    private String value;
+public class ProductVariant {
+    private String sku;
+    private Long quantity;
+    private Double price;
+    private Integer position;
+    private String barcode;
+    private Attribute attribute;
 }

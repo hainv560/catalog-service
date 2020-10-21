@@ -1,5 +1,6 @@
 package com.hainv.catalog.model;
 
+import com.hainv.catalog.domain.Attribute;
 import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -43,9 +44,11 @@ public class ProductVariantEntity extends AuditEntity{
 
     private Double price;
 
-    @Column(columnDefinition = "jsonb")
+    private Integer position;
+
+    @Column(columnDefinition = "jsonb",name = "attributes")
     @Type(type = "jsonb")
-    private String attributes;
+    private Attribute attributes;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @MapsId

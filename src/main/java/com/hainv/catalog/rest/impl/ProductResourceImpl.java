@@ -21,4 +21,24 @@ public class ProductResourceImpl implements ProductResource {
     public ResponseEntity<?> createProduct(@Valid CreateProductReq createProductReq) {
         return null;
     }
+
+    @Override
+    public ResponseEntity<?> getProducts() {
+        return null;
+    }
+
+    @Override
+    public ResponseEntity<?> getProductDetail(Long productId) {
+        return null;
+    }
+
+    @Override
+    public ResponseEntity<?> updateProduct(Long productId) {
+        return null;
+    }
+
+    @Override
+    public ResponseEntity<?> getVariants(Long productId) {
+        return null;
+    }
 }
